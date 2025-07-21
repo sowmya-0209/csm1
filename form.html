@@ -1,0 +1,202 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Profile Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    h1, h2 {
+      text-align: center;
+      margin: 5px 0;
+    }
+    .info {
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    form {
+      width: 100%;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    td, th {
+      border: 1px solid #333;
+      padding: 8px;
+      vertical-align: top;
+    }
+    th {
+      text-align: left;
+      background: #f0f0f0;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+    input[type="text"], input[type="date"], input[type="number"], input[type="email"], select {
+      width: 100%;
+      padding: 6px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .section-title {
+      background: #e0e0e0;
+      text-align: center;
+      font-weight: bold;
+      margin-top: 20px;
+      padding: 5px;
+    }
+    .submit-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: #007BFF;
+      color: #fff;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>GAYATRI VIDYA PARISHAD COLLEGE OF ENGINEERING FOR WOMEN(A)</h1>
+    <h2>Madhurawada :: Visakhapatnam - 530048</h2>
+    <div class="info">
+      Approved by AICTE, New Delhi, Permanently Affiliated to Andhra University<br>
+      Accredited by NAAC with "A" from 2022 to 2027<br>
+      CSE, ECE and IT Courses Accredited by NBA (2019-2022) and Re-accredited by NBA (2022-2025)<br>
+      EEE Course Accredited by NBA (2023-2026)<br>
+      Ph: 0891-2739144 | Fax: 0891-2526639 | Email: gvpc[email link] | Website: www.gvpcew.ac.in
+    </div>
+    <form id="studentForm" onsubmit="return validateForm()">
+      <table>
+        <tr>
+          <th>H T NO.</th>
+          <th colspan="2">NAME OF THE STUDENT (as per SSC)</th>
+          <th>BRANCH</th>
+        </tr>
+        <tr>
+          <td><input type="text" name="htno" required></td>
+          <td colspan="2"><input type="text" name="studentName" required></td>
+          <td><input type="text" name="branch"></td>
+        </tr>
+        <tr>
+          <th>Date of Birth (as per SSC)</th>
+          <th>AADHAR No. (self)</th>
+          <th>Mobile No. (Self)</th>
+          <th>e-mail ID</th>
+        </tr>
+        <tr>
+          <td><input type="date" name="dob"></td>
+          <td><input type="text" name="aadhar"></td>
+          <td><input type="text" name="mobile"></td>
+          <td><input type="email" name="email"></td>
+        </tr>
+      </table>
+      <div class="section-title">Educational Details</div>
+      <table>
+        <tr>
+          <th>% of Marks</th>
+          <th>GRADE</th>
+          <th>School of Study & Place</th>
+        </tr>
+        <tr>
+          <td><input type="number" name="sscMarks" min="0" max="100"></td>
+          <td><input type="text" name="sscGrade"></td>
+          <td><input type="text" name="sscSchool"></td>
+        </tr>
+        <tr>
+          <th>% of Marks (Inter / Diploma)</th>
+          <th>GRADE</th>
+          <th>College of Study & Place</th>
+        </tr>
+        <tr>
+          <td><input type="number" name="interMarks" min="0" max="100"></td>
+          <td><input type="text" name="interGrade"></td>
+          <td><input type="text" name="interCollege"></td>
+        </tr>
+      </table>
+      <div class="section-title">Qualifying Examination Details</div>
+      <table>
+        <tr>
+          <th>EAMCET</th>
+          <th>JEE</th>
+          <th>ECET (Diploma)</th>
+        </tr>
+        <tr>
+          <td>
+            HTNO:<input type="text" name="eamcetHt"> Year:<input type="text" name="eamcetYear"> Rank:<input type="text" name="eamcetRank">
+          </td>
+          <td>
+            HTNO:<input type="text" name="jeeHt"> Year:<input type="text" name="jeeYear"> Rank:<input type="text" name="jeeRank">
+          </td>
+          <td>
+            HTNO:<input type="text" name="ecetHt"> Year:<input type="text" name="ecetYear"> Rank:<input type="text" name="ecetRank">
+          </td>
+        </tr>
+      </table>
+      <div class="section-title">Admission Details</div>
+      <table>
+        <tr>
+          <th>Category of Admission</th>
+          <th>Nationality & Religion</th>
+          <th>Caste & Category</th>
+          <th>State to which belongs to</th>
+        </tr>
+        <tr>
+          <td>
+            <label><input type="radio" name="admissionCategory" value="EAMCET"> EAMCET</label>
+            <label><input type="radio" name="admissionCategory" value="Spot"> SPOT</label>
+            <label><input type="radio" name="admissionCategory" value="ECET"> ECET</label>
+          </td>
+          <td><input type="text" name="nationality"></td>
+          <td><input type="text" name="casteCategory"></td>
+          <td><input type="text" name="state"></td>
+        </tr>
+        <tr>
+          <th>Availing AP Govt. Fee Reimbursement Scheme</th>
+          <td colspan="3">
+            <label><input type="checkbox" name="feeReim" value="YES"> YES</label>
+            <label><input type="checkbox" name="feeReim" value="NO"> NO</label>
+            <label><input type="checkbox" name="feeReim" value="EWS"> EWS</label>
+          </td>
+        </tr>
+      </table>
+      <div class="section-title">Details of Parents</div>
+      <table>
+        <tr>
+          <th>Father's Name</th>
+          <th>Mother's Name</th>
+        </tr>
+        <tr>
+          <td>
+            <label>Qualification<input type="text" name="fatherQual"></label>
+            <label>Occupation<input type="text" name="fatherOcc"></label>
+            <label>Annual Income<input type="text" name="fatherIncome"></label>
+            <label>Land Line (Off/Res)<input type="text" name="fatherLand"></label>
+            <label>Mobile No.<input type="text" name="fatherMobile"></label>
+            <label>e-mail ID<input type="email"
